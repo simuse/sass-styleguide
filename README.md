@@ -180,4 +180,102 @@ font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
 ### Units
-Omit unit specification after b
+Omit unit specification after 0 values.
+```
+margin: 0;
+padding: 0;
+```
+### Quotation Marks
+ Use single quotation marks for attribute selectors and property values.
+
+Use single ('') rather than double ("") quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (url()). 
+```
+/* Not recommended */
+@import url("//www.google.com/css/maia.css");
+
+html {
+  font-family: "open sans", arial, sans-serif;
+}
+
+/* Recommended */
+@import url(//www.google.com/css/maia.css);
+
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+```
+
+### Leading 0
+Do not use put 0s in front of values or lengths between -1 and 1. 
+```
+font-size: .8em;
+```
+### Hexadecimal Notation
+Use 3 character hexadecimal notation where possible. 
+```
+/* Not recommended */
+color: #eebbcc;
+
+/* Recommended */
+color: #ebc;
+```
+
+### Formating
+Always use a single space between property and value (but no space between property and colon) for consistency reasons. 
+```
+/* Not recommended */
+h3 {
+  font-weight:bold;
+}
+
+/* Recommended */
+h3 {
+  font-weight: bold;
+}
+```
+
+### Vendor prefixes
+Never write them, they are added automatically at compilation.
+
+## Comments 
+Comment as much as possible, but comment smart.
+* Prefer line comments (// in Sass-land) to block comments.
+* 
+```
+/*=======================================================================
+   Section comment block
+  =======================================================================*/
+
+/* Sub-section comment block
+ ====================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces.
+ */
+
+// inline comment
+```
+
+### Documenting
+Write detailed comments for code that isn't self-documenting: 
+* Uses of z-index
+* Compatibility or browser-specific hacks
+
+## Further reading
+* [Google Styleguides](https://google.github.io/styleguide/htmlcssguide.xml)
+* [Nesting in Sass and Less](http://markdotto.com/2015/07/20/css-nesting/)
+* [Name Your SASS Variables Modularly](http://webdesign.tutsplus.com/tutorials/quick-tip-name-your-sass-variables-modularly--webdesign-13364)
+* [SASS guidelines](http://sass-guidelin.es/)
