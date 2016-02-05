@@ -16,6 +16,8 @@ A team friendly approach to working with SASS on large projects.
 	* [BEM methodology](#bem-methodology)
 4. [Properties declarations](#properties-declarations)
 	* [Declaration Order](#declaration-order)
+	* [Shorthand Properties](#shorthand-properties)
+	* [Vendor Prefixes](#vendor-prefixes)
 5. [Comments and Documentation](#comments-and-documentation)
 	* [The importance of documenting](#the-importance-of-documenting)
 	* [Using SassDoc](#using-sassdoc)
@@ -228,3 +230,10 @@ Never stop reading !
 * [SMACSS Architecture](https://smacss.com/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 * [SassDoc](http://sassdoc.com/)
+
+
+
+
+
+
+
