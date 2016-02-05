@@ -62,23 +62,6 @@ $length: $value * 1px;
 
 TODO
 
-### Break Into As Many Small Files As Makes Sense
-There is no penalty to splitting into many small files. Do it as much as feels good to the project. I know I find it easier to jump to small specific files and navigate through them than fewer/larger ones.
-
-### Partials are named _partial.scss
-This is a common naming convention that indicates this file isn't meant to be compiled by itself. It likely has dependencies that would make it impossible to compile by itself. Personally I like dashes in the "actual" filename though, like _dropdown-menu.scss.
-
-### Locally, Compile with Source Maps
-In development, it probably doesn't matter which format you compile your Sass in (e.g. expanded, compressed, etc) locally as long as you are producing source maps. 
-
-### In Deployment, Compile Compressed
-Live websites should only ever have compressed CSS. And gzipped with far-our expires headers to boot.
-
-### Variables 
-Variablize all common numbers and colors with meaning.
-If you find yourself using a number other than 0 or 100% over and over, it likely deserves a variable. Since it likely has meaning and controls consistency, being able to tweak it en masse may be useful. Or a color other than black or white.
-
-
 ## Selectors
 ---
 ### Basic recommendations
