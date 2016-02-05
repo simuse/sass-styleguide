@@ -32,6 +32,8 @@ All Sass related files are located in: `resources/static/` with the following fi
 * `/sass` - sass folder
 * `/images` - images
 
+/!\ TODO /!\ Document the structure precisely, based on the existing structure and what we can adapt for the new project.
+
 
 ## Syntax
 
