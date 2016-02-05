@@ -5,7 +5,17 @@ A team friendly approach to working with SASS on large projects
 
 ## Table of content
 
-[TOC]
+1. [Syntax](#syntax)
+	* [General recommendations](#general-recommendations)
+	* [Strings](#strings)
+	* [Numbers](#numbers)
+2. [Structure](#structure)
+3. [Selectors and BEM](#selectors-and-bem)
+	* [General recommendations](#general-recommendations)
+	* [BEM methodology](#bem-methodology)
+4. [Properties declarations](#properties-declarations)
+	* [Declaration Order](#declaration-order)
+
 
 
 ## Syntax
@@ -70,7 +80,7 @@ TODO
 * When writing multiple selectors on one line, give each one its own line.
 * Use classes over tags for better performances -- `.title` instead of `h1`.
 * Scope classes to the closest parent only when necessary (e.g., when not using prefixed classes).
-* Keep your selectors as flat as possible. Max 3 levels deep.
+* Keep your selectors as flat as possible. With SASS particularly, it is easy to get carried away. Keep your nesting to 3 levels deep at max. 
 * Use hypens to separate words -- `.my-class` instead of `.myClass`
 
 #### BEM Methodology
@@ -99,19 +109,10 @@ Learn more about BEM methodology:
 * [Getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax)
 
 
+## Properties Declarations
 
-### Nesting
-Don’t nest deeper than 3 levels.
-When selectors become this long, you're likely writing CSS that is:
-* Strongly coupled to the HTML (fragile)
-* Overly specific (powerful) 
-* Not reusable
-
- Never nest ID selectors 
-
-## Properties
----
-### Declaration Order
+#### Declaration Order
+This order is used as a general rule. 
 1. Scoped variables
 2. @extend
 3. @include
@@ -120,12 +121,11 @@ When selectors become this long, you're likely writing CSS that is:
 6. Nested elements
 7. Media queries
 
-Alphabetize properties.
+#### Shorthand properties
+Use shorthand properties where possible. You might need to be specific when overriding existing properties though.
 
-### Shorthand properties
-Use shorthand properties where possible. 
-```
-/* Not recommended */
+```css
+// NOT recommended
 border-top-style: none;
 font-family: palatino, georgia, serif;
 font-size: 100%;
@@ -135,68 +135,22 @@ padding-left: 1em;
 padding-right: 1em;
 padding-top: 0;
 
-/* Recommended */
+// Recommended 
 border-top: 0;
 font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
-### Units
-Omit unit specification after 0 values.
-```
-margin: 0;
-padding: 0;
-```
-### Quotation Marks
- Use single quotation marks for attribute selectors and property values.
 
-Use single ('') rather than double ("") quotation marks for attribute selectors or property values. Do not use quotation marks in URI values (url()). 
-```
-/* Not recommended */
-@import url("//www.google.com/css/maia.css");
-
-html {
-  font-family: "open sans", arial, sans-serif;
-}
-
-/* Recommended */
-@import url(//www.google.com/css/maia.css);
-
-html {
-  font-family: 'open sans', arial, sans-serif;
-}
-```
-
-### Leading 0
-Do not use put 0s in front of values or lengths between -1 and 1. 
-```
-font-size: .8em;
-```
-### Hexadecimal Notation
-Use 3 character hexadecimal notation where possible. 
-```
-/* Not recommended */
-color: #eebbcc;
-
-/* Recommended */
-color: #ebc;
-```
-
-### Formating
-Always use a single space between property and value (but no space between property and colon) for consistency reasons. 
-```
-/* Not recommended */
-h3 {
-  font-weight:bold;
-}
-
-/* Recommended */
-h3 {
-  font-weight: bold;
-}
-```
-
-### Vendor prefixes
+#### Vendor Prefixes
 Never write them, they are added automatically at compilation.
+
+
+
+
+
+
+
+
 
 ## Comments 
 Comment as much as possible, but comment smart.
