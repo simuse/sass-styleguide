@@ -6,13 +6,18 @@ A team friendly approach to working with SASS on large projects
 ## Table of content
 
 1. [Syntax](#syntax)
+	* [General recommendations](#general-recommendations)
+	* [Strings](#strings)
+	* [Numbers](#numbers)
 2. [Structure](#structure)
-3. 
+3. [Selectors and BEM](#selectors-and-bem)
+	* [General recommendations](#general-recommendations)
+	* [BEM methodology](#bem-methodology)
 
 
 ## Syntax
 
-#### Writing style
+#### General Recommendations
 * Indent by soft tabs with two spaces — it guarantees that code renders the same in any environment.
 * Put a space before the opening brace `{` in rule declarations.
 * Include a space after `:`, not before, for each property.
@@ -20,7 +25,6 @@ A team friendly approach to working with SASS on large projects
 * Put closing braces `}` of rule declarations on a new line.
 * End all properties with a semi-colon. It is optional, but makes it easier for errors to sneak in.
 * Put blank lines between rule declarations.
-* When using multiple selectors in a rule declaration, give each selector its own line.
 
 ```css
 // NOT recommended
@@ -62,83 +66,46 @@ $length: $value * 1px;
 
 TODO
 
-## Selectors
----
-### Basic recommendations
-* Avoid IDs, they are too specific. Avoid over-qualifying with type selectors.
-```
-// NOT recommended
 
-// recommended
-````
-* When grouping selectors, keep individual selectors to a single line.
-* Use classes over generic element tag for optimum rendering performance.
-* Avoid using several attribute selectors (e.g., [class^="..."]) on commonly occuring components. Browser performance is known to be impacted by these.
-* Keep selectors short and strive to limit the number of elements in each selector to three.
+## Selectors and BEM
+
+#### General Recommendations
+* Give your selectors names that reflect the purpose of the element, instead or presentational or cryptic names. Those names are more understandable and less likely to change.
+* Avoid using IDs, they are too specific.
+* Avoid over-qualifying with type selectors -- `.alert` instead of `div.alert`.
+* Avoid using broad attribute selectors (e.g. `[class^="..."]`), it impacts browser performance.
+* When writing multiple selectors on one line, give each one its own line.
+* Use classes over tags for better performances -- `.title` instead of `h1`.
 * Scope classes to the closest parent only when necessary (e.g., when not using prefixed classes).
+* Keep your selectors as flat as possible. Max 3 levels deep.
+* Use hypens to separate words -- `.my-class` instead of `.myClass`
 
-### BEM Syntax
+#### BEM Methodology
 
-BEM stands for Block Element Modifier, a clever and clean way to name your CSS classes. Yes, I said classes, not IDs. I don’t use any IDs in my CSS and neither should you. Any. IDs are overkill and can lead to specificity issues. Of course, IDs are still very useful for JavaScript hooks and HTML anchors.
+BEM stands for **Block Element Modifier**, a clever and clean way to name your CSS classes. The point behind the BEM syntax is to provide context directly into the selector in order to make them easily understandable to anyone involved in the project. It also reduces CSS specificity by simplifying selectors. 
 
-The point behind the BEM syntax is to provide context directly into the selector in order to make them easily understandable to anyone new to the project.
-
-Here is a very basic example of BEM:
-```
+Here is a very basic example of the BEM syntax:
+```css
+// In vanilla CSS
 .block { }
-.block--modifier { }
 .block__element { }
-.block__element--modifier { }
-````
-Learn about BEM syntax: 
+.block--modifier { }
+
+// The same thing in SASS
+.block {
+  &__element { }
+  &--modifier { }
+}
+```
+
+![BEM in action](http://skynettask.bc/wikimso/images/b/ba/BEM-01.jpg)
+
+Learn more about BEM methodology: 
 * [BEM.info](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 * [Getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax)
 
-### Picking names
-Instead of presentational or cryptic names, always use class names that reflect the purpose of the element in question, or that are otherwise generic. 
 
-Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change. 
-
-### Delimiters
-Separate words in class names by a hyphen
-
-### Formating
-Use a space between the last selector and the declaration block. 
-Always use a single space between the last selector and the opening brace that begins the declaration block. 
-The opening brace should be on the same line as the last selector in a given rule. 
-```
-`/* Not recommended: missing space */
-#video{
-  margin-top: 1em;
-}
-
-/* Not recommended: unnecessary line break */
-#video
-{
-  margin-top: 1em;
-}
-
-/* Recommended */
-#video {
-  margin-top: 1em;
-}
-```
-Separate selectors and declarations by new lines. 
-```
-/* Not recommended */
-a:focus, a:active {
-  position: relative; top: 1px;
-}
-
-/* Recommended */
-h1,
-h2,
-h3 {
-  font-weight: normal;
-  line-height: 1.2;
-}
-```
 
 ### Nesting
 Don’t nest deeper than 3 levels.
