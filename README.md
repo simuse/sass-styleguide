@@ -1,6 +1,6 @@
 # Skynet SASS styleguide
 
-A team friendly approach to working with SASS on large projects
+A team friendly approach to working with SASS on large projects.
 
 
 ## Table of content
@@ -15,7 +15,10 @@ A team friendly approach to working with SASS on large projects
 	* [BEM methodology](#bem-methodology)
 4. [Properties declarations](#properties-declarations)
 	* [Declaration Order](#declaration-order)
-
+5. [Comments and Documentation](#comments-and-documentation)
+	* [The importance of documenting](#the-importance-of-documenting)
+	* [Using SassDoc](#using-sassdoc)
+	* [Example of a SassDoc comment](#example-of-a-sassdoc-comment)
 
 
 ## Syntax
@@ -29,7 +32,7 @@ A team friendly approach to working with SASS on large projects
 * End all properties with a semi-colon. It is optional, but makes it easier for errors to sneak in.
 * Put blank lines between rule declarations.
 
-```css
+```scss
 // NOT recommended
 .mySelector{
     color:blue;
@@ -54,7 +57,7 @@ A team friendly approach to working with SASS on large projects
 * Top-level numeric calculations should always be wrapped in parenthese -- `width: (100% / 3);` instead of `width: 100% / 3;`.
 * When performing calculations, don't treat units as strings. Think of them as algebraic symbols instead. To add a unit to a number, you have to multiply this number by 1 unit. 
 
-```css
+```scss
 $value: 42;
 
 // NOT recommended
@@ -85,10 +88,12 @@ TODO
 
 #### BEM Methodology
 
-BEM stands for **Block Element Modifier**, a clever and clean way to name your CSS classes. The point behind the BEM syntax is to provide context directly into the selector in order to make them easily understandable to anyone involved in the project. It also reduces CSS specificity by simplifying selectors. 
+> BEM stands for Block Element Modifier, a clever and clean way to name your CSS classes. 
+
+The point behind the BEM syntax is to provide context directly into the selector in order to make them easily understandable to anyone involved in the project. It also reduces CSS specificity by simplifying selectors. 
 
 Here is a very basic example of the BEM syntax:
-```css
+```scss
 // In vanilla CSS
 .block { }
 .block__element { }
@@ -112,7 +117,8 @@ Learn more about BEM methodology:
 ## Properties Declarations
 
 #### Declaration Order
-This order is used as a general rule. 
+This order is used as a general rule. Within "groups" of properties, try sorting them alphabetically consistantly.
+
 1. Scoped variables
 2. @extend
 3. @include
@@ -124,7 +130,7 @@ This order is used as a general rule.
 #### Shorthand properties
 Use shorthand properties where possible. You might need to be specific when overriding existing properties though.
 
-```css
+```scss
 // NOT recommended
 border-top-style: none;
 font-family: palatino, georgia, serif;
@@ -145,52 +151,67 @@ padding: 0 1em 2em;
 Never write them, they are added automatically at compilation.
 
 
+## Comments and Documentation
 
+#### The importance of documenting
+You should write detailed comments for code that is not self-documenting: 
+* Browser-specific hacks (try to avoid them anyway)
+* Seemingly arbitrary numeric values
+* Order of z-indexes
+* Use of variables (at declaration)
+* Purpose for a mixin (at declaration)
+* ...
 
-
-
-
-
-
-## Comments 
-Comment as much as possible, but comment smart.
-* Prefer line comments (// in Sass-land) to block comments.
-* 
+To explain the use of a hacky/unusual properties, use an inline comment right after it.
+```scss
+.hacky-selector {
+  *zoom: 1; // for IE 6/7 only
+}
 ```
-/*=======================================================================
-   Section comment block
-  =======================================================================*/
 
-/* Sub-section comment block
- ====================================================================== */
+#### Using SassDoc
+>[SassDoc](http://sassdoc.com/) is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye. 
+>
 
+SassDoc is an `npm` task that generates documentation for your Sass projects. It uses the same kind of syntax as Doxygen. 
+You can annotate elements in your code with `@` attributes.
+Functions, mixins, placeholders and variables are the most important items to annotate.
+
+Here are just a few useful annotations: 
+* [@author](http://sassdoc.com/annotations/#author) - describes the author of the documented item
+* [@example](http://sassdoc.com/annotations/#example) - describes a use case for the documented item
+* [@output](http://sassdoc.com/annotations/#output) - provide a description of what’s being printed by the mixin
+* [@parameter](http://sassdoc.com/annotations/#parameter) - describes a parameter of the documented item
+* [@see](http://sassdoc.com/annotations/#see) - describes an item that is somehow related to the documented item
+* [@todo](http://sassdoc.com/annotations/#todo) - defines any task to do regarding the documented item
+* [...](http://sassdoc.com/annotations/)
+
+
+#### Example of a SassDoc comment
+
+```scss
 /**
- * Short description using Doxygen-style comment format
+ * Add padding to the element - this example is not particularly useful
  *
- * The first sentence of the long description starts here and continues on this
- * line for a while finally concluding here at the end of this paragraph.
- *
- * The long description is ideal for more detailed explanations and
- * documentation. It can include example HTML, URLs, or any other information
- * that is deemed necessary or useful.
- *
- * @tag This is a tag named 'tag'
- *
- * TODO: This is a todo statement that describes an atomic task to be completed
- *   at a later date. It wraps after 80 characters and following lines are
- *   indented by 2 spaces.
+ * @param {String} $param The padding value to use
+ * @example scss
+ *     .element {
+ *       @include pad(10px)
+ *     }
+ * @output css
+ *     .element {
+ *       padding: 10px;
+ *     }
+ * @since 1.0
  */
+@mixin example($param: 50px) {
+  padding: $param;
+}
 
-// inline comment
 ```
 
-### Documenting
-Write detailed comments for code that isn't self-documenting: 
-* Uses of z-index
-* Compatibility or browser-specific hacks
 
-## Further reading
-* [Google Styleguides](https://google.github.io/styleguide/htmlcssguide.xml)
-* [Nesting in Sass and Less](http://markdotto.com/2015/07/20/css-nesting/)
-* [Name Your SASS Variables Modularly](http://webdesign.tutsplus.com/tutorials/quick-tip-name-your-sass-variables-modularly--webdesign-13364)
-* [SASS guidelines](http://sass-guidelin.es/)
+
+
+
+
