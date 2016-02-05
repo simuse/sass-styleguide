@@ -5,14 +5,7 @@ A team friendly approach to working with SASS on large projects
 
 ## Table of content
 
-1. [Syntax](#syntax)
-	* [General recommendations](#general-recommendations)
-	* [Strings](#strings)
-	* [Numbers](#numbers)
-2. [Structure](#structure)
-3. [Selectors and BEM](#selectors-and-bem)
-	* [General recommendations](#general-recommendations)
-	* [BEM methodology](#bem-methodology)
+[TOC]
 
 
 ## Syntax
