@@ -60,7 +60,7 @@ All Sass related files are located in: `resources/static/` with the following fi
 ```
 
 #### Strings
-* Strings should be wrapped with single quotes`'`.
+* Strings should be wrapped with single quotes `'`.
 * URLs should be quoted as well -- `background-image: url('/images/kittens.jpg');`.
 
 #### Numbers
@@ -126,7 +126,7 @@ Learn more about BEM methodology:
 ## Properties Declarations
 
 #### Declaration Order
-This order is used as a general rule. Within "groups" of properties, try sorting them alphabetically consistantly.
+This order is used as a general rule. Within sets of properties (be it includes or regular), try sorting them alphabetically consistantly.
 
 1. Scoped variables
 2. @extend
@@ -169,7 +169,7 @@ You should write detailed comments for code that is not self-documenting:
 * Order of z-indexes
 * Use of variables (at declaration)
 * Purpose for a mixin (at declaration)
-* ...
+* etc.
 
 To explain the use of a hacky/unusual properties, use an inline comment right after it.
 ```scss
@@ -227,10 +227,4 @@ Never stop reading !
 * [Compass Documentation](http://compass-style.org/)
 * [SMACSS Architecture](https://smacss.com/)
 * [BEM 101](https://css-tricks.com/bem-101/)
-
-
-
-
-
-
-
+* [SassDoc](http://sassdoc.com/)
