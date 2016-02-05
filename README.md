@@ -5,11 +5,12 @@ A team friendly approach to working with SASS on large projects.
 
 ## Table of content
 
-1. [Syntax](#syntax)
+1. [Structure](#structure)
+	* [Project folder](#project-folder)
+2. [Syntax](#syntax)
 	* [General recommendations](#general-recommendations)
 	* [Strings](#strings)
 	* [Numbers](#numbers)
-2. [Structure](#structure)
 3. [Selectors and BEM](#selectors-and-bem)
 	* [General recommendations](#general-recommendations)
 	* [BEM methodology](#bem-methodology)
@@ -19,6 +20,17 @@ A team friendly approach to working with SASS on large projects.
 	* [The importance of documenting](#the-importance-of-documenting)
 	* [Using SassDoc](#using-sassdoc)
 	* [Example of a SassDoc comment](#example-of-a-sassdoc-comment)
+6. [Further reading](#further-reading)
+
+
+## Structure
+
+#### Project folder
+
+All Sass related files are located in: `resources/static/` with the following file/directory structure: 
+* `config.rb` - compass configuration file
+* `/sass` - sass folder
+* `/images` - images
 
 
 ## Syntax
@@ -66,11 +78,6 @@ $length: $value + px;
 // Recommended
 $length: $value * 1px;
 ```
-
-
-## Structure
-
-TODO
 
 
 ## Selectors and BEM
@@ -204,11 +211,21 @@ Here are just a few useful annotations:
  *     }
  * @since 1.0
  */
-@mixin example($param: 50px) {
+@mixin pad(param: 50px) {
   padding: $param;
 }
-
 ```
+
+
+## Further Reading
+
+Never stop reading ! 
+
+* [Sass Documentation](http://sass-lang.com/)
+* [Compass Documentation](http://compass-style.org/)
+* [SMACSS Architecture](https://smacss.com/)
+* [BEM 101](https://css-tricks.com/bem-101/)
+
 
 
 
