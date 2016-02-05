@@ -1,13 +1,67 @@
 # Skynet SASS styleguide
 
+A team friendly approach to working with SASS on large projects
+
+
 ## Table of content
 
-* Syntax
-* Selectors
-* Properties
-* Comments
+1. [Syntax](#syntax)
+2. [Structure](#structure)
+3. 
+
+
+## Syntax
+
+#### Writing style
+* Indent by soft tabs with two spaces — it guarantees that code renders the same in any environment.
+* Put a space before the opening brace `{` in rule declarations.
+* Include a space after `:`, not before, for each property.
+* In properties, put a space after, but not before, the `:` character.
+* Put closing braces `}` of rule declarations on a new line.
+* End all properties with a semi-colon. It is optional, but makes it easier for errors to sneak in.
+* Put blank lines between rule declarations.
+* When using multiple selectors in a rule declaration, give each selector its own line.
+
+```css
+// NOT recommended
+.mySelector{
+    color:blue;
+    font-size: 14px}
+    
+// Recommended
+.my-selector {
+  color: blue;
+  font-size: 14px;
+}
+```
+
+#### Strings
+* Strings should be wrapped with single quotes`'`.
+* URLs should be quoted as well -- `background-image: url('/images/kittens.jpg');`.
+
+#### Numbers
+* Don't add leading zeros -- `.5em` instead of `0.5em`.
+* When dealing with lengths, a 0 value should never ever a unit -- `margin: 0;` instead of `margin: 0px;`.
+* Always lowercase hex values -- `color: #bada55` instead of `#BADA55`.
+* Use shorthand hex values where available -- `#fff` instead of `#ffffff`.
+* Top-level numeric calculations should always be wrapped in parenthese -- `width: (100% / 3);` instead of `width: 100% / 3;`.
+* When performing calculations, don't treat units as strings. Think of them as algebraic symbols instead. To add a unit to a number, you have to multiply this number by 1 unit. 
+
+```css
+$value: 42;
+
+// NOT recommended
+$length: $value + px;
+
+// Recommended
+$length: $value * 1px;
+```
+
 
 ## Structure
+
+TODO
+
 ### Break Into As Many Small Files As Makes Sense
 There is no penalty to splitting into many small files. Do it as much as feels good to the project. I know I find it easier to jump to small specific files and navigate through them than fewer/larger ones.
 
@@ -24,42 +78,6 @@ Live websites should only ever have compressed CSS. And gzipped with far-our exp
 Variablize all common numbers and colors with meaning.
 If you find yourself using a number other than 0 or 100% over and over, it likely deserves a variable. Since it likely has meaning and controls consistency, being able to tweak it en masse may be useful. Or a color other than black or white.
 
-## Syntax
-
-* Indent by soft tabs with two spaces — it's way to guarantee code renders the same in any environment.
-```
-.example {
-  color: blue;
-}
-```
-* Use only lowercase. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
-```
-// NOT recommended
-color: #BADA55
-// recommended
-color: #bada55
-```
-* Include one space before the opening brace of declaration blocks for legibility.
-* Place closing braces of declaration blocks on a new line.
-* Include one space after `:` for each declaration.
-* Each declaration should appear on its own line for more accurate error reporting.
-* End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.
-* Don't prefix property values or color parameters with a leading zero (e.g., .5 instead of 0.5 and -.5px instead of -0.5px).
-* Use shorthand hex values where available, e.g., #fff instead of #ffffff.
-* Avoid specifying units for zero values, e.g., margin: 0; instead of margin: 0px;.
-* Prefer dashes over camelCasing in class names. Underscores are OK if you're using BEM (see OOCSS and BEM below).
-* When using multiple selectors in a rule declaration, give each selector its own line.
-* Put a space before the opening brace { in rule declarations
-* In properties, put a space after, but not before, the : character.
-* Put closing braces } of rule declarations on a new line
-* Put blank lines between rule declarations
-
-### Strings
-* To avoid any potential issue with character encoding, it is highly recommended to force UTF-8 encoding in the main stylesheet using the @charset directive. eg: @charset 'utf-8';
-* TODO http://sass-guidelin.es/#strings
-
-### Numbers
-TODO http://sass-guidelin.es/#numbers
 
 ## Selectors
 ---
