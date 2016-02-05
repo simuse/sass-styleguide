@@ -1,4 +1,4 @@
-# Skynet SASS styleguide
+# SASS styleguide
 
 A team friendly approach to working with SASS on large projects.
 
