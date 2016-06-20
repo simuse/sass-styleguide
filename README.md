@@ -230,9 +230,9 @@ Never stop reading !
 * [SassDoc](http://sassdoc.com/)
 
 #### BEM
-* [SMACSS Architecture](https://smacss.com/)
-* [Battling BEM: 10 Common Problems And How To Avoid Them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/)
+* [BEM Official](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/)
+* [Battling BEM: 10 Common Problems And How To Avoid Them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/)
 
 
 
