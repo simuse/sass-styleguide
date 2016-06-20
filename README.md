@@ -223,7 +223,6 @@ Never stop reading !
 #### SASS
 * [Sass Documentation](http://sass-lang.com/)
 * [SassDoc](http://sassdoc.com/)
-* [Sass Styleguide by Hugo Giraudel](https://www.sitepoint.com/css-sass-styleguide/)
 
 #### BEM
 * [BEM Official](https://en.bem.info/)
@@ -231,7 +230,8 @@ Never stop reading !
 * [Battling BEM: 10 Common Problems And How To Avoid Them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/)
 
 #### Other styleguides
-
+* [Airbnb](https://github.com/airbnb/css)
+* [Hugo Giraudel](https://www.sitepoint.com/css-sass-styleguide/)
 
 
 
