@@ -228,6 +228,7 @@ Never stop reading !
 #### SASS
 * [Sass Documentation](http://sass-lang.com/)
 * [SassDoc](http://sassdoc.com/)
+* [Sass Styleguide](https://www.sitepoint.com/css-sass-styleguide/)
 
 #### BEM
 * [BEM Official](https://en.bem.info/)
