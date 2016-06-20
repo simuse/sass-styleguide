@@ -29,12 +29,7 @@ A team friendly approach to working with SASS on large projects.
 
 #### Project folder
 
-All Sass related files are located in: `resources/static/` with the following file/directory structure: 
-* `config.rb` - compass configuration file
-* `/sass` - sass folder
-* `/images` - images
-
-/!\ TODO /!\ Document the structure precisely, based on the existing structure and what we can adapt for the new project.
+/!\ TODO /!\ Document the SASS file structure.
 
 
 ## Syntax
