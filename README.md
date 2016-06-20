@@ -225,11 +225,14 @@ Here are just a few useful annotations:
 
 Never stop reading ! 
 
+#### SASS
 * [Sass Documentation](http://sass-lang.com/)
-* [Compass Documentation](http://compass-style.org/)
-* [SMACSS Architecture](https://smacss.com/)
-* [BEM 101](https://css-tricks.com/bem-101/)
 * [SassDoc](http://sassdoc.com/)
+
+#### BEM
+* [SMACSS Architecture](https://smacss.com/)
+* [Battling BEM: 10 Common Problems And How To Avoid Them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/)
+* [BEM 101](https://css-tricks.com/bem-101/)
 
 
 
