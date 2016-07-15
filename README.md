@@ -123,11 +123,6 @@ Here is a very basic example of the BEM syntax:
 
 ![BEM in action](http://skynettask.bc/wikimso/images/b/ba/BEM-01.jpg)
 
-Learn more about BEM methodology: 
-* [BEM.info](https://en.bem.info/)
-* [BEM 101](https://css-tricks.com/bem-101/)
-* [Getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax)
-
 #### Javascript hooks
 
 Avoid binding to the same class in both your CSS and JavaScript. Using the same class for two situations leads to, time wasted during refactoring when a developer must cross-reference each class they are changing and/or developers being afraid to make changes for fear of breaking code.
