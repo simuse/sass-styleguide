@@ -1,6 +1,6 @@
 # SASS styleguide
 
-A team friendly approach to working with SASS on large projects.
+A team friendly approach to working with SASS on large projects. :bear:
 
 
 ## Table of content
