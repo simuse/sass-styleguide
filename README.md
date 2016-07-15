@@ -45,7 +45,7 @@ scss/
 
 ## Syntax
 
-#### General Recommendations
+### General Recommendations
 * Indent usign soft tabs (2 spaces) — it guarantees that code renders the same in any environment.
 * Put a space before the opening brace `{` in rule declarations.
 * In properties, put a space after, but not before, the `:` character.
@@ -66,11 +66,11 @@ scss/
 }
 ```
 
-#### Strings
+### Strings
 * Strings should be wrapped with single quotes `'`.
 * URLs should be quoted as well -- `background-image: url('/images/kittens.jpg');`.
 
-#### Numbers
+### Numbers
 * Don't add leading zeros -- `.5em` instead of `0.5em`.
 * When dealing with lengths, a 0 value should never have a unit -- `margin: 0;` instead of `margin: 0px;`.
 * Always lowercase hex values -- `color: #bada55` instead of `#BADA55`.
@@ -90,7 +90,7 @@ $length: $value * 1px;
 
 ## Selectors and BEM
 
-#### General Recommendations
+### General Recommendations
 * Do not use ID selectors.
 * Use classes over tags for better performances -- `.title` instead of `h1`.
 * Use hypens to separate words -- `.my-class` instead of `.myClass`
@@ -101,7 +101,7 @@ $length: $value * 1px;
 * Scope classes to the closest parent only when necessary (e.g., when not using prefixed classes).
 * Keep your selectors as flat as possible. With SASS particularly, it is easy to get carried away. Keep your nesting to 3 levels deep max. 
 
-#### BEM Methodology
+### BEM Methodology
 
 > BEM stands for Block Element Modifier, a clever and clean way to name your CSS classes. 
 
@@ -123,7 +123,7 @@ Here is a very basic example of the BEM syntax:
 
 ![BEM in action](http://skynettask.bc/wikimso/images/b/ba/BEM-01.jpg)
 
-#### Javascript hooks
+### Javascript hooks
 
 Avoid binding to the same class in both your CSS and JavaScript. Using the same class for two situations leads to, time wasted during refactoring when a developer must cross-reference each class they are changing and/or developers being afraid to make changes for fear of breaking code.
 
@@ -134,7 +134,7 @@ Create Javascript-specific classes, prefixed with `js-`:
 
 ## Properties Declarations
 
-#### Declaration Order
+### Declaration Order
 This order is used as a general rule. 
 Within sets of properties, sort them alphabetically consistantly.
 
@@ -144,7 +144,7 @@ Within sets of properties, sort them alphabetically consistantly.
 4. Nested selectors
 5. Media queries
 
-#### Nested selectors
+### Nested selectors
 **Never** nest selectors more than three levels deep!
 ```scss
 .page-container {
@@ -162,7 +162,7 @@ If you end up nesting more, it probably means your CSS is:
 
 Again: **never** nest ID selectors!
 
-#### Shorthand properties
+### Shorthand properties
 Use shorthand properties where possible. You might need to be specific when overriding existing properties though.
 
 ```scss
@@ -182,13 +182,13 @@ font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
 
-#### Mixins
+### Mixins
 Mixins should be used to DRY up your code, add clarity, or abstract complexity. 
 
-#### Extend directive
+### Extend directive
 `@extend` should be avoided. It has unintuitive and possibly dangerous behaviour, espeacially when used in nested selectors. 
 
-#### Vendor Prefixes
+### Vendor Prefixes
 Never write vendor prefixes, they are added automatically at compilation.
 
 ## Comments and Documentation
@@ -202,7 +202,7 @@ Never write vendor prefixes, they are added automatically at compilation.
     ...
  }
 ````
-#### The importance of documenting
+### The importance of documenting
 You should write detailed comments for code that is not self-documenting: 
 * Browser-specific hacks (try to avoid them anyway)
 * Seemingly arbitrary numeric values
@@ -222,21 +222,15 @@ To explain the use of a hacky/unusual properties, use an inline comment right af
 
 Never stop reading ! 
 
-#### SASS
+### SASS
 * [Sass Documentation](http://sass-lang.com/)
 * [SassDoc](http://sassdoc.com/)
 
-#### BEM
+### BEM
 * [BEM Official](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/)
 * [Battling BEM: 10 Common Problems And How To Avoid Them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/)
 
-#### Other styleguides
+### Other styleguides
 * [Airbnb](https://github.com/airbnb/css)
 * [Hugo Giraudel](https://www.sitepoint.com/css-sass-styleguide/)
-
-
-
-
-
-
