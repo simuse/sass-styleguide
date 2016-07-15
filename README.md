@@ -1,12 +1,9 @@
-# SASS styleguide
-
-A team friendly approach to working with SASS on large projects. :bear:
-
+# SASS styleguide :bear:
+A team friendly approach to working with SASS on large projects. 
 
 ## Table of content
 
 1. [Structure](#structure)
-	* [Project folder](#project-folder)
 2. [Syntax](#syntax)
 	* [General recommendations](#general-recommendations)
 	* [Strings](#strings)
@@ -24,23 +21,38 @@ A team friendly approach to working with SASS on large projects. :bear:
 	* [Example of a SassDoc comment](#example-of-a-sassdoc-comment)
 6. [Further reading](#further-reading)
 
-
 ## Structure
 
-#### Project folder
+This is an example of the tree structure of the Sass folder.
 
-/!\ TODO /!\ Document the SASS file structure.
-
+```
+scss/
+|-- main.scss
+|-- ie.scss
+|-- components/
+|   |-- _breadcrumbs.scss
+|   |-- _buttons.scss
+|   |-- ...
+|-- global/
+|   |-- _reset.scss
+|   |-- _typography.scss
+|   |-- ...
+|-- mixins/
+|   |-- _placeholder.scss
+|   |-- _responsive.scss
+|   |-- ...
+|-- settings/
+|   |-- _variables.scss
+```
 
 ## Syntax
 
 #### General Recommendations
-* Indent by soft tabs with two spaces — it guarantees that code renders the same in any environment.
+* Indent usign soft tabs (2 spaces) — it guarantees that code renders the same in any environment.
 * Put a space before the opening brace `{` in rule declarations.
-* Include a space after `:`, not before, for each property.
 * In properties, put a space after, but not before, the `:` character.
 * Put closing braces `}` of rule declarations on a new line.
-* End all properties with a semi-colon. It is optional, but makes it easier for errors to sneak in.
+* End all properties with a semi-colon.
 * Put blank lines between rule declarations.
 
 ```scss
@@ -82,15 +94,15 @@ $length: $value * 1px;
 ## Selectors and BEM
 
 #### General Recommendations
-* Give your selectors names that reflect the purpose of the element, instead or presentational or cryptic names. Those names are more understandable and less likely to change.
-* Avoid using IDs, they are too specific.
-* Avoid over-qualifying with type selectors -- `.alert` instead of `div.alert`.
-* Avoid using broad attribute selectors (e.g. `[class^="..."]`), it impacts browser performance.
-* When writing multiple selectors on one line, give each one its own line.
+* Do not use ID selectors.
 * Use classes over tags for better performances -- `.title` instead of `h1`.
-* Scope classes to the closest parent only when necessary (e.g., when not using prefixed classes).
-* Keep your selectors as flat as possible. With SASS particularly, it is easy to get carried away. Keep your nesting to 3 levels deep at max. 
 * Use hypens to separate words -- `.my-class` instead of `.myClass`
+* Don't over-specify selectors -- `.alert` instead of `div.alert`.
+* Avoid using broad attribute selectors (e.g. `[class^="..."]`).
+* When using multiple selectors in one declaration, give each one its own line.
+* Give your selectors names that reflect the **purpose** of the element, not its **look**. Those names are more understandable and less likely to change.
+* Scope classes to the closest parent only when necessary (e.g., when not using prefixed classes).
+* Keep your selectors as flat as possible. With SASS particularly, it is easy to get carried away. Keep your nesting to 3 levels deep max. 
 
 #### BEM Methodology
 
@@ -232,8 +244,3 @@ Never stop reading !
 #### Other styleguides
 * [Airbnb](https://github.com/airbnb/css)
 * [Hugo Giraudel](https://www.sitepoint.com/css-sass-styleguide/)
-
-
-
-
-
