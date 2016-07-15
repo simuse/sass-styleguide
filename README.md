@@ -23,24 +23,24 @@ A team friendly approach to working with SASS on large projects.
 
 This is an example of the tree structure of the Sass folder.
 
-```
+```sh
 scss/
-|-- main.scss
-|-- ie.scss
-|-- components/
-|   |-- _breadcrumbs.scss
-|   |-- _buttons.scss
-|   |-- ...
-|-- global/
-|   |-- _reset.scss
-|   |-- _typography.scss
-|   |-- ...
-|-- mixins/
-|   |-- _placeholder.scss
-|   |-- _responsive.scss
-|   |-- ...
-|-- settings/
-|   |-- _variables.scss
+├── main.scss
+├── ie.scss
+├── components/
+│   ├── _breadcrumbs.scss
+│   ├── _buttons.scss
+│   └── ...
+├── global/
+│   ├── _reset.scss
+│   ├── _typography.scss
+│   └── ...
+├── mixins/
+│   ├── _placeholder.scss
+│   ├── _responsive.scss
+│   └── ...
+└── settings/
+    └── _variables.scss
 ```
 
 ## Syntax
