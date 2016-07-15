@@ -145,7 +145,7 @@ Within sets of properties, sort them alphabetically consistantly.
 5. Media queries
 
 #### Nested selectors
-**Do not nest selectors more than three levels deep!**
+**Never** nest selectors more than three levels deep!
 ```scss
 .page-container {
   .content {
