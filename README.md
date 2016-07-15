@@ -17,8 +17,6 @@ A team friendly approach to working with SASS on large projects.
 	* [Vendor Prefixes](#vendor-prefixes)
 5. [Comments and Documentation](#comments-and-documentation)
 	* [The importance of documenting](#the-importance-of-documenting)
-	* [Using SassDoc](#using-sassdoc)
-	* [Example of a SassDoc comment](#example-of-a-sassdoc-comment)
 6. [Further reading](#further-reading)
 
 ## Structure
@@ -74,11 +72,10 @@ scss/
 
 #### Numbers
 * Don't add leading zeros -- `.5em` instead of `0.5em`.
-* When dealing with lengths, a 0 value should never ever a unit -- `margin: 0;` instead of `margin: 0px;`.
+* When dealing with lengths, a 0 value should never have a unit -- `margin: 0;` instead of `margin: 0px;`.
 * Always lowercase hex values -- `color: #bada55` instead of `#BADA55`.
-* Use shorthand hex values where available -- `#fff` instead of `#ffffff`.
 * Top-level numeric calculations should always be wrapped in parenthese -- `width: (100% / 3);` instead of `width: 100% / 3;`.
-* When performing calculations, don't treat units as strings. Think of them as algebraic symbols instead. To add a unit to a number, you have to multiply this number by 1 unit. 
+* When performing calculations, don't treat units as strings. Think of them as algebraic symbols instead. To add a unit to a number, multiply this number by 1 unit. 
 
 ```scss
 $value: 42;
@@ -131,19 +128,44 @@ Learn more about BEM methodology:
 * [BEM 101](https://css-tricks.com/bem-101/)
 * [Getting your head ’round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax)
 
+#### Javascript hooks
+
+Avoid binding to the same class in both your CSS and JavaScript. Using the same class for two situations leads to, time wasted during refactoring when a developer must cross-reference each class they are changing and/or developers being afraid to make changes for fear of breaking code.
+
+Create Javascript-specific classes, prefixed with `js-`:
+```
+<button class="btn js-update-info">Update info</button>
+```
 
 ## Properties Declarations
 
 #### Declaration Order
-This order is used as a general rule. Within sets of properties (be it includes or regular), try sorting them alphabetically consistantly.
+This order is used as a general rule. 
+Within sets of properties, sort them alphabetically consistantly.
 
-1. Scoped variables
-2. @extend
-3. @include
-4. Regular properties
-5. Pseudo-classes, pseudo-elements
-6. Nested elements
-7. Media queries
+1. @include
+2. CSS properties
+3. Pseudo-classes, pseudo-elements
+4. Nested selectors
+5. Media queries
+
+#### Nested selectors
+**Do not nest selectors more than three levels deep!**
+```scss
+.page-container {
+  .content {
+    .profile {
+      // STOP!
+    }
+  }
+}
+```
+If you end up nesting more, it probably means your CSS is:
+* Strongly coupled to the HTML
+* Overly specific 
+* Not reusable
+
+Again: **never** nest ID selectors!
 
 #### Shorthand properties
 Use shorthand properties where possible. You might need to be specific when overriding existing properties though.
@@ -165,12 +187,26 @@ font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
 
-#### Vendor Prefixes
-Never write them, they are added automatically at compilation.
+#### Mixins
+Mixins should be used to DRY up your code, add clarity, or abstract complexity. 
 
+#### Extend directive
+`@extend` should be avoided. It has unintuitive and possibly dangerous behaviour, espeacially when used in nested selectors. 
+
+#### Vendor Prefixes
+Never write vendor prefixes, they are added automatically at compilation.
 
 ## Comments and Documentation
-
+* Use line comments (// in Sass) to document within the code
+* Use block comments do separate main code blocks
+```
+/**
+ * Wrapper
+ */
+ .wrapper { 
+    ...
+ }
+````
 #### The importance of documenting
 You should write detailed comments for code that is not self-documenting: 
 * Browser-specific hacks (try to avoid them anyway)
@@ -186,47 +222,6 @@ To explain the use of a hacky/unusual properties, use an inline comment right af
   *zoom: 1; // for IE 6/7 only
 }
 ```
-
-#### Using SassDoc
->[SassDoc](http://sassdoc.com/) is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye. 
->
-
-SassDoc is an `npm` task that generates documentation for your Sass projects. It uses the same kind of syntax as Doxygen. 
-You can annotate elements in your code with `@` attributes.
-Functions, mixins, placeholders and variables are the most important items to annotate.
-
-Here are just a few useful annotations: 
-* [@author](http://sassdoc.com/annotations/#author) - describes the author of the documented item
-* [@example](http://sassdoc.com/annotations/#example) - describes a use case for the documented item
-* [@output](http://sassdoc.com/annotations/#output) - provide a description of what’s being printed by the mixin
-* [@parameter](http://sassdoc.com/annotations/#parameter) - describes a parameter of the documented item
-* [@see](http://sassdoc.com/annotations/#see) - describes an item that is somehow related to the documented item
-* [@todo](http://sassdoc.com/annotations/#todo) - defines any task to do regarding the documented item
-* [...](http://sassdoc.com/annotations/)
-
-
-#### Example of a SassDoc comment
-
-```scss
-/**
- * Add padding to the element - this example is not particularly useful
- *
- * @param {String} $param The padding value to use
- * @example scss
- *     .element {
- *       @include pad(10px)
- *     }
- * @output css
- *     .element {
- *       padding: 10px;
- *     }
- * @since 1.0
- */
-@mixin pad(param: 50px) {
-  padding: $param;
-}
-```
-
 
 ## Further Reading
 
@@ -244,3 +239,9 @@ Never stop reading !
 #### Other styleguides
 * [Airbnb](https://github.com/airbnb/css)
 * [Hugo Giraudel](https://www.sitepoint.com/css-sass-styleguide/)
+
+
+
+
+
+
