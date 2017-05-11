@@ -3,45 +3,20 @@ A team friendly approach to working with SASS on large projects.
 
 ## Table of content
 
-1. [Structure](#structure)
-2. [Syntax](#syntax)
+1. [Syntax](#syntax)
 	* [General recommendations](#general-recommendations)
 	* [Strings](#strings)
 	* [Numbers](#numbers)
-3. [Selectors and BEM](#selectors-and-bem)
+2. [Selectors and BEM](#selectors-and-bem)
 	* [General recommendations](#general-recommendations)
 	* [BEM methodology](#bem-methodology)
-4. [Properties declarations](#properties-declarations)
+3. [Properties declarations](#properties-declarations)
 	* [Declaration Order](#declaration-order)
 	* [Shorthand Properties](#shorthand-properties)
 	* [Vendor Prefixes](#vendor-prefixes)
-5. [Comments and Documentation](#comments-and-documentation)
+4. [Comments and Documentation](#comments-and-documentation)
 	* [The importance of documenting](#the-importance-of-documenting)
-6. [Further reading](#further-reading)
-
-## Structure
-
-This is an example of the tree structure of the Sass folder.
-
-```sh
-scss/
-├── main.scss
-├── ie.scss
-├── components/
-│   ├── _breadcrumbs.scss
-│   ├── _buttons.scss
-│   └── ...
-├── global/
-│   ├── _reset.scss
-│   ├── _typography.scss
-│   └── ...
-├── mixins/
-│   ├── _placeholder.scss
-│   ├── _responsive.scss
-│   └── ...
-└── settings/
-    └── _variables.scss
-```
+5. [Further reading](#further-reading)
 
 ## Syntax
 
